@@ -1,0 +1,50 @@
+﻿@model Webedmx.Models.prfoilecls
+@{
+    ViewBag.Title = "Profile_Load";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>profile</h2>
+<div>
+    @using (Html.BeginForm("profile_update", "profiledb", FormMethod.Post))
+    {
+        <div>
+            <label>name:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.name)
+        </div>
+        <div>
+            <label>age:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.age)
+        </div>
+        <div>
+            <label>address:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.address)
+        </div>
+        <div>
+            <label>email:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.email)
+        </div>
+        <div>
+            <label>photo</label>
+        </div>
+        <div>
+            <img src="@Url.Content(Model.photo)" alt="haii" height="300" width="250"/>
+        </div>
+        <div>
+            <input type="submit" value="update"/>
+            @Html.DisplayFor(m=>m.msg)
+        </div>
+        <div>
+            @Html.ActionLink("bact to home page","Home","logindb")
+        </div>
+    }
+</div>
+

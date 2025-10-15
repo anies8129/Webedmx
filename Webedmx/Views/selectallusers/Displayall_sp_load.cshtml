@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Displayall_sp_load";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Display all details</h2>
+<div>
+    @using (Html.BeginForm("Displayall_sp_load", "selectallusers", FormMethod.Get))
+    {
+        <table id="t01" class="table">
+            <tr>
+                <th>name</th>
+                <th>age</th>
+                <th>address</th>
+                <th>email</th>
+                <th>photo</th>
+
+            </tr>
+            @foreach (var item in ViewBag.userdetails)
+            {
+                <tr>
+                    <td>@item.name</td>
+                    <td>@item.age</td>
+                    <td>@item.address</td>
+                    <td>@item.email</td>
+                    <td>
+                        <img src="@Url.Content(item.photo)" alt="image" height="150" width="150" />
+                    </td>
+                </tr>
+            }
+        </table>
+
+      }
+</div>
+

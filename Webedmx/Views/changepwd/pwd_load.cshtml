@@ -1,0 +1,40 @@
+﻿@model Webedmx.Models.changepwd
+@{
+    ViewBag.Title = "pwd_load";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>change password</h2>
+<div>
+    @using (Html.BeginForm("pwd_click", "changepwd", FormMethod.Post))
+    {
+
+        <div>
+            <label>current password:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.oldpassword)
+            @Html.ValidationMessageFor(m => m.oldpassword)
+        </div>
+        <div>
+            <label>new password:</label>
+        </div>
+        <div>
+            @Html.PasswordFor(m => m.newpassword)
+            @Html.ValidationMessageFor(m => m.newpassword)
+        </div>
+        <div>
+            <label>confirm password:</label>
+        </div>
+        <div>
+            @Html.PasswordFor(m => m.confirmpassword)
+            @Html.ValidationMessageFor(m => m.confirmpassword)
+        </div>
+        <div>
+            <input type="submit" value="reset password"/>
+            @Html.DisplayFor(m=>m.msg)
+        </div>
+
+    }
+</div>
+

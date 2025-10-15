@@ -1,0 +1,32 @@
+﻿@model Webedmx.Models.logincls
+@{
+    ViewBag.Title = "Login_pageload";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>USER LOGIN</h2>
+<div>
+    @using (Html.BeginForm("Login_click", "logindb", FormMethod.Post))
+    {
+        <div>
+            <label>user name</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.uname)
+            @Html.ValidationMessageFor(m => m.uname)
+        </div>
+        <div>
+            <label>password</label>
+        </div>
+        <div>
+            @Html.PasswordFor(m => m.password)
+            @Html.ValidationMessageFor(m => m.password)
+        </div>
+        <div>
+            <input type="submit" value="login"/>
+            @Html.DisplayFor(m=>m.msg)
+            
+        </div>
+    }
+</div>
+
